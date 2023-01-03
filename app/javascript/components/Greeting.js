@@ -6,9 +6,12 @@ import axios from 'axios';
 function Greeting() {
     const [greeting, setGreeting] = useState([])
     useEffect(() => {
-        // const response = axios.get('/api/v1/messages');
-        // setGreeting(response.data.message);
-        // console.log(response)
+        axios.get('/api/v1/messages')
+        .then(response => {
+            setGreeting(response.data.message);
+            console.log(response)
+        })
+        
     }, []);
     return (
         <>
