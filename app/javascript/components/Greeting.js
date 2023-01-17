@@ -8,7 +8,7 @@ function Greeting() {
     useEffect(() => {
         axios.get('/api/v1/messages')
         .then(response => {
-            setGreeting(response.data.message);
+            setGreeting(response.data.message)
             console.log(response)
         })
         
